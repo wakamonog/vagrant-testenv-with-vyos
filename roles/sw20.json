@@ -1,0 +1,11 @@
+{
+    "name" : "sw20",
+    "default_attributes" : {},
+    "override_attributes" : {},
+    "json_class": "Chef::Role",
+    "description": "Setup sw20 server",
+    "chef_type": "role",
+    "run_list": [
+        "recipe[set-ospf]"
+    ]
+}

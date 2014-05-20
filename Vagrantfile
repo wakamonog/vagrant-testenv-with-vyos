@@ -5,16 +5,19 @@ Vagrant.configure("2") do |config|
         sw20.vm.hostname = "sw20"
         sw20.vm.network "private_network", ip: "192.168.10.10", auto_config: false
         sw20.vm.network "private_network", ip: "192.168.20.254", auto_config: true
-        #sw20.vm.provision :chef_solo do |chef|
-            #chef.cookbooks_path = "./cookbooks"
-            #chef.roles_path = "../my-recipes/roles"
-            #chef.data_bags_path = "../my-recipes/data_bags"
-            #chef.add_recipe "hoge"
-            #chef.add_role "web"
+        sw20.vm.provision :chef_solo do |chef|
+            chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
+            chef.roles_path = "./roles"
+            chef.data_bags_path = "./data_bags"
+            #chef.add_recipe "change-apt-server"
+            #chef.add_recipe "apt"
+            #chef.add_recipe "apache2"
+            #chef.add_recipe "apache2::mod_ssl"
+            chef.add_role "sw20"
 
             # You may also specify custom JSON attributes:
             #chef.json = { :mysql_password => "foo" }
-        #end
+        end
     end
 
     config.vm.define :sw30 do |sw30|
@@ -41,13 +44,13 @@ Vagrant.configure("2") do |config|
         web.vm.network "private_network", ip: "192.168.20.10", auto_config: true
         web.vm.provision :chef_solo do |chef|
             chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
-            #chef.roles_path = "../my-recipes/roles"
-            #chef.data_bags_path = "../my-recipes/data_bags"
-            chef.add_recipe "change-apt-server"
-            chef.add_recipe "apt"
-            chef.add_recipe "apache2"
-            chef.add_recipe "apache2::mod_ssl"
-            #chef.add_role "web"
+            chef.roles_path = "./roles"
+            chef.data_bags_path = "./data_bags"
+            #chef.add_recipe "change-apt-server"
+            #chef.add_recipe "apt"
+            #chef.add_recipe "apache2"
+            #chef.add_recipe "apache2::mod_ssl"
+            chef.add_role "web"
 
             # You may also specify custom JSON attributes:
             #chef.json = { :mysql_password => "foo" }

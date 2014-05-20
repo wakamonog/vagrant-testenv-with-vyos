@@ -1,0 +1,37 @@
+#!/bin/vbash
+
+# Load script-template
+source /opt/vyatta/etc/functions/script-template
+
+# Set eth1
+set interfaces ethernet eth1 address '192.168.10.1/30'
+set interfaces ethernet eth1 duplex auto
+set interfaces ethernet eth1 ip ospf authentication plaintext-password 'vagrant'
+set interfaces ethernet eth1 ip ospf dead-interval '600'
+set interfaces ethernet eth1 ip ospf hello-interval '10'
+set interfaces ethernet eth1 ip ospf network point-to-point
+set interfaces ethernet eth1 ip ospf priority '1'
+set interfaces ethernet eth1 ip ospf retransmit-interval '5'
+set interfaces ethernet eth1 ip ospf transmit-delay '1'
+set interfaces ethernet eth1 smp_affinity auto
+set interfaces ethernet eth1 speed auto
+
+# Set eth2
+set interfaces ethernet eth2 duplex auto
+set interfaces ethernet eth2 smp_affinity auto
+set interfaces ethernet eth2 speed auto
+
+# Set OSPF
+set protocols ospf area 0 network '192.168.10.0/30'
+set protocols ospf area 0 network '192.168.20.0/24'
+set protocols ospf passive-interface eth0
+set protocols ospf passive-interface eth2
+
+# Set Timezone
+set system time-zone 'Asia/Tokyo'
+
+# commit
+commit
+
+# save file
+save
