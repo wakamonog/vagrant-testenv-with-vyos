@@ -4,6 +4,10 @@
         "add_route" : {
             "address" : "192.168.0.0/16",
             "gateway" : "192.168.30.254"
+        },
+        "mysql" : {
+            "server_root_password" : "vagrant",
+            "allow_remote_root" : true
         }
     },
     "override_attributes" : {},
