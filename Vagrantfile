@@ -9,10 +9,6 @@ Vagrant.configure("2") do |config|
             chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"
-            #chef.add_recipe "change-apt-server"
-            #chef.add_recipe "apt"
-            #chef.add_recipe "apache2"
-            #chef.add_recipe "apache2::mod_ssl"
             chef.add_role "sw20"
 
             # You may also specify custom JSON attributes:
@@ -26,30 +22,26 @@ Vagrant.configure("2") do |config|
         sw30.vm.hostname = "sw30"
         sw30.vm.network "private_network", ip: "192.168.10.20", auto_config: false
         sw30.vm.network "private_network", ip: "192.168.30.254", auto_config: true
-        #sw30.vm.provision :chef_solo do |chef|
-            #chef.cookbooks_path = "./cookbooks"
-            #chef.roles_path = "../my-recipes/roles"
-            #chef.data_bags_path = "../my-recipes/data_bags"
-            #chef.add_recipe "hoge"
-            #chef.add_role "web"
+        sw30.vm.provision :chef_solo do |chef|
+            chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
+            chef.roles_path = "./roles"
+            chef.data_bags_path = "./data_bags"
+            chef.add_role "sw30"
 
             # You may also specify custom JSON attributes:
             #chef.json = { :mysql_password => "foo" }
-        #end
+        end
     end
 
     config.vm.define :web do |web|
         web.vm.box = "hashicorp/precise64"
         web.vm.hostname = "web-svr"
         web.vm.network "private_network", ip: "192.168.20.10", auto_config: true
+        web.omnibus.chef_version = :latest
         web.vm.provision :chef_solo do |chef|
             chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"
-            #chef.add_recipe "change-apt-server"
-            #chef.add_recipe "apt"
-            #chef.add_recipe "apache2"
-            #chef.add_recipe "apache2::mod_ssl"
             chef.add_role "web"
 
             # You may also specify custom JSON attributes:
@@ -61,15 +53,15 @@ Vagrant.configure("2") do |config|
         db.vm.box = "hashicorp/precise64"
         db.vm.hostname = "db-svr"
         db.vm.network "private_network", ip: "192.168.30.10", auto_config: true
-        #db.vm.provision :chef_solo do |chef|
-            #chef.cookbooks_path = "./cookbooks"
-            #chef.roles_path = "../my-recipes/roles"
-            #chef.data_bags_path = "../my-recipes/data_bags"
-            #chef.add_recipe "hoge"
-            #chef.add_role "web"
+        db.omnibus.chef_version = :latest
+        db.vm.provision :chef_solo do |chef|
+            chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
+            chef.roles_path = "./roles"
+            chef.data_bags_path = "./data_bags"
+            chef.add_role "db"
 
             # You may also specify custom JSON attributes:
             #chef.json = { :mysql_password => "foo" }
-        #end
+        end
     end
 end

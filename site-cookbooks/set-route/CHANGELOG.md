@@ -1,11 +1,11 @@
-hello CHANGELOG
-===============
+set-route CHANGELOG
+===================
 
-This file is used to list changes made in each version of the hello cookbook.
+This file is used to list changes made in each version of the set-route cookbook.
 
 0.1.0
 -----
-- [your_name] - Initial release of hello
+- [your_name] - Initial release of set-route
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

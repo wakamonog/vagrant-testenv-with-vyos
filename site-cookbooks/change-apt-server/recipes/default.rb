@@ -6,8 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-file '/etc/apt/sources.list' do
-	_file = Chef::Util::FileEdit.new(path)
-	_file.search_file_replace('us.archive.ubuntu.com', "ftp.jaist.ac.jp")
-	content _file.send(:contents).join
+cookbook_file "/etc/apt/sources.list" do
+    source "sources.list"
+    mode 0644
 end

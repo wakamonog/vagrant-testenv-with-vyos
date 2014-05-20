@@ -1,9 +1,9 @@
 {
-    "name" : "web",
+    "name" : "db",
     "default_attributes" : {
         "add_route" : {
             "address" : "192.168.0.0/16",
-            "gateway" : "192.168.20.254"
+            "gateway" : "192.168.30.254"
         }
     },
     "override_attributes" : {},
@@ -13,8 +13,8 @@
     "run_list": [
         "recipe[change-apt-server]",
         "recipe[apt]",
-        "recipe[apache2]",
-        "recipe[apache2::mod_ssl]",
+        "recipe[mysql::client]",
+        "recipe[mysql::server]",
         "recipe[set-route]"
     ]
 }

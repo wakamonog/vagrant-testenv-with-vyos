@@ -1,18 +1,18 @@
 {
-    "name" : "sw20",
+    "name" : "sw30",
     "default_attributes" : {
         "IF" : {
-            "eth1" : "192.168.10.1/30"
+            "eth1" : "192.168.10.2/30"
         },
         "ospf" : {
             "passwd" : "vagrant",
             "nw1" : "192.168.10.0/30",
-            "nw2" : "192.168.20.0/24"
+            "nw2" : "192.168.30.0/24"
         }   
     },
     "override_attributes" : {},
     "json_class": "Chef::Role",
-    "description": "Setup sw20 server",
+    "description": "Setup sw30 server",
     "chef_type": "role",
     "run_list": [
         "recipe[set-ospf]"
