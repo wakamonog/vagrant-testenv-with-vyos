@@ -43,8 +43,8 @@ Vagrant.configure("2") do |config|
             chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
             #chef.roles_path = "../my-recipes/roles"
             #chef.data_bags_path = "../my-recipes/data_bags"
-            chef.add_recipe "hello"
             chef.add_recipe "change-apt-server"
+            chef.add_recipe "apt"
             chef.add_recipe "apache2"
             chef.add_recipe "apache2::mod_ssl"
             #chef.add_role "web"
