@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
         web.vm.hostname = "web-svr"
         web.vm.network "private_network", ip: "192.168.20.10", auto_config: true
         web.vm.provision :chef_solo do |chef|
-            chef.cookbooks_path = "./cookbooks"
+            chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
             #chef.roles_path = "../my-recipes/roles"
             #chef.data_bags_path = "../my-recipes/data_bags"
             chef.add_recipe "hello"
