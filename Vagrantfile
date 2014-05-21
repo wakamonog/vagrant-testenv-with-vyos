@@ -1,7 +1,6 @@
 Vagrant.configure("2") do |config|
      config.vm.define :sw20 do |sw20|
         sw20.vm.box = "svigneux/vyos-1.0.2-amd64"
-        #sw20.vm.box = "svigneux/vyatta-core-6.6r1-amd64"
         sw20.vm.hostname = "sw20"
         sw20.vm.network "private_network", ip: "192.168.10.10", auto_config: false
         sw20.vm.network "private_network", ip: "192.168.20.254", auto_config: true
@@ -11,15 +10,11 @@ Vagrant.configure("2") do |config|
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"
             chef.add_role "sw20"
-
-            # You may also specify custom JSON attributes:
-            #chef.json = { :mysql_password => "foo" }
         end
     end
 
     config.vm.define :sw30 do |sw30|
         sw30.vm.box = "svigneux/vyos-1.0.2-amd64"
-        #sw30.vm.box = "svigneux/vyatta-core-6.6r1-amd64"
         sw30.vm.hostname = "sw30"
         sw30.vm.network "private_network", ip: "192.168.10.20", auto_config: false
         sw30.vm.network "private_network", ip: "192.168.30.254", auto_config: true
@@ -29,9 +24,6 @@ Vagrant.configure("2") do |config|
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"
             chef.add_role "sw30"
-
-            # You may also specify custom JSON attributes:
-            #chef.json = { :mysql_password => "foo" }
         end
     end
 
@@ -46,9 +38,6 @@ Vagrant.configure("2") do |config|
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"
             chef.add_role "web"
-
-            # You may also specify custom JSON attributes:
-            #chef.json = { :mysql_password => "foo" }
         end
     end
 
@@ -63,9 +52,6 @@ Vagrant.configure("2") do |config|
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"
             chef.add_role "db"
-
-            # You may also specify custom JSON attributes:
-            #chef.json = { :mysql_password => "foo" }
         end
     end
 end
