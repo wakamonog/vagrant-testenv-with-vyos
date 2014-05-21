@@ -14,7 +14,8 @@
         "recipe[change-apt-server]",
         "recipe[apt]",
         "recipe[apache2]",
-        "recipe[apache2::mod_ssl]",
+        "recipe[git]",
+        "recipe[git-clone]",
         "recipe[set-route]"
     ]
 }
