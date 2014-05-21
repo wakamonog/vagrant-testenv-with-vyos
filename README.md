@@ -29,3 +29,24 @@ git submodule update
 vagrant up --provision
 ```
 * 数分待っていると作成が終わります
+
+## 作成されるVM
+* WEBサーバ
+* SW20サーバ
+* SW30サーバ
+* DBサーバ
+```
+WEB
+ |
+ |
+ |
+SW20
+ |
+ |
+ |
+SW30
+ |
+ |
+ |
+DB
+```
