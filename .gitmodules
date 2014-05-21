@@ -1,6 +1,3 @@
-[submodule "cookbooks/apache2"]
-	path = cookbooks/apache2
-	url = https://github.com/onehealth-cookbooks/apache2.git
 [submodule "cookbooks/mysql"]
 	path = cookbooks/mysql
 	url = https://github.com/opscode-cookbooks/mysql.git

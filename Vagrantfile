@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
         sw20.vm.network "private_network", ip: "192.168.10.10", auto_config: false
         sw20.vm.network "private_network", ip: "192.168.20.254", auto_config: true
         sw20.vm.provision :chef_solo do |chef|
+            chef.custom_config_path = "Vagrantfile.chef"
             chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"
@@ -23,6 +24,7 @@ Vagrant.configure("2") do |config|
         sw30.vm.network "private_network", ip: "192.168.10.20", auto_config: false
         sw30.vm.network "private_network", ip: "192.168.30.254", auto_config: true
         sw30.vm.provision :chef_solo do |chef|
+            chef.custom_config_path = "Vagrantfile.chef"
             chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"
@@ -34,11 +36,12 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.define :web do |web|
-        web.vm.box = "hashicorp/precise64"
+        web.vm.box = "kakky0312/precise64"
         web.vm.hostname = "web-svr"
         web.vm.network "private_network", ip: "192.168.20.10", auto_config: true
         web.omnibus.chef_version = :latest
         web.vm.provision :chef_solo do |chef|
+            chef.custom_config_path = "Vagrantfile.chef"
             chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"
@@ -50,11 +53,12 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.define :db do |db|
-        db.vm.box = "hashicorp/precise64"
+        db.vm.box = "kakky0312/precise64"
         db.vm.hostname = "db-svr"
         db.vm.network "private_network", ip: "192.168.30.10", auto_config: true
         db.omnibus.chef_version = :latest
         db.vm.provision :chef_solo do |chef|
+            chef.custom_config_path = "Vagrantfile.chef"
             chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"

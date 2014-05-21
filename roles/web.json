@@ -13,9 +13,8 @@
     "run_list": [
         "recipe[change-apt-server]",
         "recipe[apt]",
-        "recipe[apache2]",
         "recipe[git]",
-        "recipe[git-clone]",
+        "recipe[set-apache2]",
         "recipe[set-route]"
     ]
 }
