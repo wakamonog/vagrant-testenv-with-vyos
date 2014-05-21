@@ -10,6 +10,10 @@ package "apache2" do
     action :install
 end
 
+package "python-mysqldb" do
+	action :install
+end
+
 git "/var/www/testing" do
     repository "https://github.com/kakky0312/testing.git"
     revision "master"

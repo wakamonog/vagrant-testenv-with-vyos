@@ -37,7 +37,3 @@ mysql_database_user "vagrant" do
     privileges [:all]
     action [:create, :grant]
 end
-
-package "python-mysqldb" do
-	action :install
-end
