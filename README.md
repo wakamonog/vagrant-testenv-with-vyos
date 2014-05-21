@@ -35,7 +35,7 @@ vagrant up --provision
 ## 各サーバへのログイン
 * 各サーバへは以下のコマンドでSSHでログイン出来ます
 ```
-vagrant ssh [web | sw20 | sw30 | db]
+vagrant ssh [web|sw20|sw30|db]
 ```
 
 ## 動作確認
