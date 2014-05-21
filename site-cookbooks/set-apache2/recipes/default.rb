@@ -14,8 +14,8 @@ package "python-mysqldb" do
 	action :install
 end
 
-git "/var/www/testing" do
-    repository "https://github.com/kakky0312/testing.git"
+git "/usr/lib/cgi-bin/test" do
+    repository "https://github.com/kakky0312/test-scripts.git"
     revision "master"
     action :checkout
     user "root"
