@@ -8,10 +8,12 @@
 ## 事前準備
 * <http://vagrantcloud.com>でアカウント登録をする
 * 登録後、vagrantコマンドからログインしてBOXをダウンロードする
+* vyosのホスト名変更に対応させるのにpluginをインストールする
 ```
 vagrant login
 vagrant box add svigneux/vyos-1.0.2-amd64
 vagrant box add kakky0312/precise64
+vagrant plugin install vagrant-vyatta
 ```
 * githubから実行用ファイルを落としてきて、さらにsubmoduleも落とします
 ```
