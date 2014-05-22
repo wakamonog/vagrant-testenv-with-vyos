@@ -14,6 +14,7 @@ http://www.vagrantup.com/downloads.html
 https://www.virtualbox.org/wiki/Download_Old_Builds_4_3
 ```
 * chef, gitをインストール
+* Windowsユーザの人はここが参考になるかも <http://chefsoloonwindowstutorial.readthedocs.org/en/latest/index.html>
 ```
 <chef>
 http://www.getchef.com/chef/install/
