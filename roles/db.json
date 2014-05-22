@@ -21,7 +21,6 @@
         "recipe[mysql::server]",
         "recipe[database::mysql]",
         "recipe[set-database]",
-        "recipe[git]",
         "recipe[set-route]"
     ]
 }
