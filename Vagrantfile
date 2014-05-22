@@ -1,33 +1,5 @@
 Vagrant.configure("2") do |config|
-     config.vm.define :sw20 do |sw20|
-        sw20.vm.box = "svigneux/vyos-1.0.2-amd64"
-        sw20.vm.hostname = "sw20"
-        sw20.vm.network "private_network", ip: "192.168.10.10", auto_config: false
-        sw20.vm.network "private_network", ip: "192.168.20.254", auto_config: true
-        sw20.vm.provision :chef_solo do |chef|
-            chef.custom_config_path = "Vagrantfile.chef"
-            chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
-            chef.roles_path = "./roles"
-            chef.data_bags_path = "./data_bags"
-            chef.add_role "sw20"
-        end
-    end
-
-    config.vm.define :sw30 do |sw30|
-        sw30.vm.box = "svigneux/vyos-1.0.2-amd64"
-        sw30.vm.hostname = "sw30"
-        sw30.vm.network "private_network", ip: "192.168.10.20", auto_config: false
-        sw30.vm.network "private_network", ip: "192.168.30.254", auto_config: true
-        sw30.vm.provision :chef_solo do |chef|
-            chef.custom_config_path = "Vagrantfile.chef"
-            chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
-            chef.roles_path = "./roles"
-            chef.data_bags_path = "./data_bags"
-            chef.add_role "sw30"
-        end
-    end
-
-    config.vm.define :web do |web|
+     config.vm.define :web do |web|
         web.vm.box = "kakky0312/precise64"
         web.vm.hostname = "web-svr"
         web.vm.network "private_network", ip: "192.168.20.10", auto_config: true
@@ -52,6 +24,34 @@ Vagrant.configure("2") do |config|
             chef.roles_path = "./roles"
             chef.data_bags_path = "./data_bags"
             chef.add_role "db"
+        end
+    end
+
+    config.vm.define :sw20 do |sw20|
+        sw20.vm.box = "svigneux/vyos-1.0.2-amd64"
+        sw20.vm.hostname = "sw20"
+        sw20.vm.network "private_network", ip: "192.168.10.10", auto_config: false
+        sw20.vm.network "private_network", ip: "192.168.20.254", auto_config: true
+        sw20.vm.provision :chef_solo do |chef|
+            chef.custom_config_path = "Vagrantfile.chef"
+            chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
+            chef.roles_path = "./roles"
+            chef.data_bags_path = "./data_bags"
+            chef.add_role "sw20"
+        end
+    end
+
+    config.vm.define :sw30 do |sw30|
+        sw30.vm.box = "svigneux/vyos-1.0.2-amd64"
+        sw30.vm.hostname = "sw30"
+        sw30.vm.network "private_network", ip: "192.168.10.20", auto_config: false
+        sw30.vm.network "private_network", ip: "192.168.30.254", auto_config: true
+        sw30.vm.provision :chef_solo do |chef|
+            chef.custom_config_path = "Vagrantfile.chef"
+            chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
+            chef.roles_path = "./roles"
+            chef.data_bags_path = "./data_bags"
+            chef.add_role "sw30"
         end
     end
 end
