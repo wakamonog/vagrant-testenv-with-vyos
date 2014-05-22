@@ -1,3 +1,5 @@
+# Set Repository in Japan
+
 deb http://jp.archive.ubuntu.com/ubuntu/ precise main restricted
 deb-src http://jp.archive.ubuntu.com/ubuntu/ precise main restricted
 
