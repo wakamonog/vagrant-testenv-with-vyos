@@ -1,7 +1,7 @@
 # Interface
+default["IF"]["eth0"] = ""
 default["IF"]["eth1"] = ""
 default["IF"]["eth2"] = ""
-default["IF"]["eth3"] = ""
 
 # OSPF
 default["ospf"]["passwd"] = "vagrant"
