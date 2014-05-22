@@ -17,7 +17,7 @@ vagrant plugin install vagrant-vyatta
 ```
 * githubから実行用ファイルを落としてきて、さらにsubmoduleも落とします
 ```
-git clone https://github.com/kakky0312/vagrant-init.git
+git clone https://github.com/wakamonog/vagrant-init.git
 cd vagrant-init
 git submodule init
 git submodule update
