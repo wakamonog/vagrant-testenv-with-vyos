@@ -23,7 +23,7 @@ http://www.getchef.com/chef/install/
 (Linux) apt-getやyumを利用 ex) sudo apt-get install git
 ```
 * <http://vagrantcloud.com>でアカウント登録をする
-* 登録後、vagrantコマンドからログインしてBOXをダウンロードする
+* 登録後、vagrant loginでvagrantcloudへログインし、BOXをダウンロード＆登録する
 * vyosのホスト名変更に対応させるのにpluginをインストールする
 ```
 vagrant login
