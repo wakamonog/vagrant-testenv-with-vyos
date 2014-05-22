@@ -17,8 +17,8 @@ vagrant plugin install vagrant-vyatta
 ```
 * githubから実行用ファイルを落としてきて、さらにsubmoduleも落とします
 ```
-git clone https://github.com/wakamonog/vagrant-init.git
-cd vagrant-init
+git clone https://github.com/wakamonog/vagrant-testenv-with-vyos.git
+cd vagrant-testenv-with-vyos
 git submodule init
 git submodule update
 ```
@@ -45,10 +45,10 @@ http://192.168.20.10/cgi-bin/test/load_db.py
 ```
 
 ## 作成されるVM
-* web (apache2が動作)
-* sw20 (apache2と接続 / sw30とOSPFで経路交換)
-* sw30 (dbと接続 / sw20とOSPFで経路交換)
-* db (mysqlが動作)
+* web (apache2が動作) Ubuntu 12.04 LTS 64bit
+* sw20 (apache2と接続 / sw30とOSPFで経路交換) Vyos 1.0.2 64bit
+* sw30 (dbと接続 / sw20とOSPFで経路交換) Vyos 1.0.2 64bit
+* db (mysqlが動作) Ubuntu 12.04 LTS 64bit
 ```
 webサーバ
  | ↑ 192.168.20.10/24
