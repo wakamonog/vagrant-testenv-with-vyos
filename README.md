@@ -2,10 +2,21 @@
 * Mac OSX Marverics
 * vagrant (1.6.1)
 * virtualbox (4.3.8) => 最新版(4.3.10)はshared folder周りでバグがあるため使わないようにしましょう
-* Chef (11.12.4)
+* chef (11.12.4)
 * git (1.9.2)
 
 ## 事前準備
+* vagrant, virtualboxをインストール
+```
+<vagrant>
+http://www.vagrantup.com/downloads.html
+<virtualbox (4.3.8をダウンロード)>
+https://www.virtualbox.org/wiki/Download_Old_Builds_4_3
+```
+* chef, gitをインストール
+```
+aaa
+```
 * <http://vagrantcloud.com>でアカウント登録をする
 * 登録後、vagrantコマンドからログインしてBOXをダウンロードする
 * vyosのホスト名変更に対応させるのにpluginをインストールする
