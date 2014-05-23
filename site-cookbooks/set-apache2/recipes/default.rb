@@ -10,7 +10,7 @@ package "apache2" do
     action :install
 end
 
-pachage "libapache2-mod-wsgi" do
+package "libapache2-mod-wsgi" do
     action :install
 end
 
