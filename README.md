@@ -58,7 +58,7 @@ vagrant ssh [web|sw20|sw30|db]
 ## 動作確認
 * ブラウザから以下のアドレスにアクセスすると結果が見える
 ```
-http://192.168.20.10/cgi-bin/test/load_db.py
+http://192.168.20.10/wsgi/test/load_db.py
 ```
 * sw20やsw30にログインするとOSPFでの経路交換状況が見える
 ```
